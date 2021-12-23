@@ -1,21 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import * as React from "react";
+import { Text, View, Button } from "react-native";
+import {
+  Platform,
+  StatusBar,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
+import Card from "./Card";
+import Row from "./Row";
+import Column from "./Column";
+import styles from "./styles";
+const Cardes = new Array(4).fill(null).map((v, i) => i + 1);
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.cardCont}>
+        <Image
+          style={styles.minskPhoto}
+          source={require("./assets/minsk_photo.png")}
+        />
+      </View>
+      <View style={styles.mainMenu}>
+        <Button
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        <Button
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        <Button
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        <Button
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
