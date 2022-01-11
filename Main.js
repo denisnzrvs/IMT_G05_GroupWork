@@ -8,6 +8,25 @@ import {
   TouchableOpacity
 } from "react-native";
 
+const Stack = createNativeStackNavigator();
+
+const MyStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Main"
+          component={HomeScreen}
+          options={{ title: "Minsk" }}
+        />
+        <Stack.Screen name="Food"
+        component={FlatListBasics} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const HomeScreen = ({ navigation }) => {
 function Main(props) {
   return (
     <View style={styles.container}>
@@ -78,6 +97,8 @@ function Main(props) {
     </View>
   );
 }
+};
+
 
 const styles = StyleSheet.create({
   container: {
@@ -175,6 +196,23 @@ const styles = StyleSheet.create({
     width: 407,
     height: 831
   }
+
 });
+
+const FlatListBasics = () => {
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={list}
+        renderItem={({ item }) => (
+          <View style={styles.itemBox}>
+            <Text style={styles.item}>{item.name} </Text>
+          </View>
+        )}
+      )}
+    />
+  </View>
+);
+};
 
 export default Main;
