@@ -50,13 +50,18 @@ const MyStack = () => {
           component={Hotel}
           options={{ title: "Hotel" }}
         />
+
+        <Stack.Screen
+          name="A"
+          component={A}
+          options={{ title: "A" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 const HomeScreen = ({ navigation }) => {
-  const [counter, setCount] = useState(0);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cardCont}>
@@ -76,20 +81,19 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-const Museum = () => {
+const Museum = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-      </ScrollView>
+      <View style={styles.cardCont}>
+        <Image
+          style={styles.minskPhoto}
+          source={require("./assets/minsk_photo.png")}
+        />
+      </View>
+      <View style={styles.mainMenu}>
+        <Button title="A" onPress={() => navigation.navigate("A")} />
+      </View>
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 };
@@ -139,6 +143,17 @@ const Hotel = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+const A = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.text}>
+          Privet
         </Text>
       </ScrollView>
     </SafeAreaView>
