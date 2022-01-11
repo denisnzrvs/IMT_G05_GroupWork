@@ -9,11 +9,8 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-import Card from "./Card";
-import Row from "./Row";
-import Column from "./Column";
+import MapView from "react-native-maps";
 import styles from "./styles";
-const Cards = new Array(4).fill(null).map((v, i) => i + 1);
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Styles from "./styles";
@@ -51,11 +48,7 @@ const MyStack = () => {
           options={{ title: "Hotel" }}
         />
 
-        <Stack.Screen
-          name="A"
-          component={A}
-          options={{ title: "A" }}
-        />
+        <Stack.Screen name="A" component={A} options={{ title: "A" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -64,13 +57,13 @@ const MyStack = () => {
 const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.cardCont}>
+      <View style={styles.coverPhotoContainer}>
         <Image
-          style={styles.minskPhoto}
+          style={styles.coverPhoto}
           source={require("./assets/minsk_photo.png")}
         />
       </View>
-      <View style={styles.mainMenu}>
+      <View style={styles.menu}>
         <Button title="Food" onPress={() => navigation.navigate("Food")} />
         <Button title="Shops" onPress={() => navigation.navigate("Shops")} />
         <Button title="Museum" onPress={() => navigation.navigate("Museum")} />
@@ -84,13 +77,13 @@ const HomeScreen = ({ navigation }) => {
 const Museum = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.cardCont}>
+      <View style={styles.coverPhotoContainer}>
         <Image
-          style={styles.minskPhoto}
+          style={styles.coverPhoto}
           source={require("./assets/minsk_photo.png")}
         />
       </View>
-      <View style={styles.mainMenu}>
+      <View style={styles.menu}>
         <Button title="A" onPress={() => navigation.navigate("A")} />
       </View>
       <StatusBar style="auto" />
@@ -98,64 +91,41 @@ const Museum = ({ navigation }) => {
   );
 };
 const Food = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <SafeAreaView style={styles.container}></SafeAreaView>;
 };
 const Shops = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <SafeAreaView style={styles.container}></SafeAreaView>;
 };
 const Hotel = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <SafeAreaView style={styles.container}></SafeAreaView>;
 };
 const A = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          Privet
-        </Text>
-      </ScrollView>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/minsk_photo.png")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View
+          style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}
+        >
+          <Text style={styles.title}>Title name</Text>
+          <Text style={styles.address}>Street A, City 17</Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        />
+      </View>
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 };

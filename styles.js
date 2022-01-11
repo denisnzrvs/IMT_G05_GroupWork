@@ -1,7 +1,5 @@
-import { Platform, StatusBar, StyleSheet, Dimensions } from "react-native";
-const dimensions = Dimensions.get("window");
-const w = dimensions.width / 0.6;
-const h = dimensions.height / 0.5;
+import { Platform, StatusBar, StyleSheet } from "react-native";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -10,40 +8,30 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     resizeMode: "stretch",
-    backgroundColor: "grey",
+    backgroundColor: "gainsboro",
+    ...Platform.select({
+      ios: { paddingTop: 20 },
+      android: { paddingTop: StatusBar.currentHeight },
+    }),
   },
 
-  cardCont: {
+  coverPhotoContainer: {
     flex: 2,
     flexDirection: "column",
     justifyContent: "center",
     alignSelf: "stretch",
-    backgroundColor: "grey",
   },
 
-  card: {
-    flexDirection: "column",
-    alignSelf: "flex-start",
-    backgroundColor: "grey",
-    marginTop: 20,
-    marginBottom: 20,
-    resizeMode: "stretch",
-    borderWidth: 5,
-    borderColor: "red",
-    height: 489,
-    width: 573,
-  },
-
-  minskPhoto: {
+  coverPhoto: {
     justifyContent: "center",
     alignItems: "stretch",
     height: "100%",
     width: "100%",
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    borderBottomLeftRadius: "4%",
+    borderBottomRightRadius: "4%",
     marginBottom: 20,
   },
-  mainMenu: {
+  menu: {
     flex: 2,
     flexDirection: "column",
     alignItems: "center",
@@ -56,25 +44,37 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-around",
   },
-  boxText: { color: "darkslategray", fontWeight: "bold" },
-
-  cat: {
-    flex: 1,
-    marginTop: 20,
-    alignSelf: "center",
-    resizeMode: "stretch",
+  description: {
+    flex: 2,
     flexDirection: "row",
+    height: "100%",
+    width: "100%",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    backgroundColor: "ghostwhite",
+    marginTop: 20,
     flexWrap: "wrap",
-    alignItems: "stretch",
-    //  ...Platform.select({ ios: { paddingTop: 20 }, android: { paddingTop: StatusBar.currentHeight } })
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
-  row: { flexDirection: "row", alignItems: "center", justifyContent: "center" },
-  column: { flexDirection: "column", alignItems: "center" },
+
   paragraph: { margin: 24, fontSize: 18, textAlign: "center" },
-  catPhoto: {
-    height: undefined,
+  title: {
+    marginLeft: 24,
+    marginTop: 24,
+    marginBottom: 12,
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "left",
+  },
+  address: { marginLeft: 24, fontSize: 16, justifyContent: "center" },
+  mapView: {
+    height: "80%",
     width: undefined,
-    resizeMode: "stretch",
+    flexGrow: 1,
+    alignSelf: "flex-end",
+    margin: 20,
+    borderRadius: 10,
   },
 });
 export default styles;
