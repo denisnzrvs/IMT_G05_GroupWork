@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Text, View, Button } from "react-native";
 import {
   Platform,
@@ -7,13 +7,56 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  ScrollView,
 } from "react-native";
 import Card from "./Card";
 import Row from "./Row";
 import Column from "./Column";
 import styles from "./styles";
-const Cardes = new Array(4).fill(null).map((v, i) => i + 1);
-export default function App() {
+const Cards = new Array(4).fill(null).map((v, i) => i + 1);
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Styles from "./styles";
+const Stack = createNativeStackNavigator();
+
+const MyStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Minsk Tour Guide" }}
+        />
+        <Stack.Screen
+          name="Museum"
+          component={Museum}
+          options={{ title: "Museum" }}
+        />
+        <Stack.Screen
+          name="Food"
+          component={Food}
+          options={{ title: "Food" }}
+        />
+
+        <Stack.Screen
+          name="Shops"
+          component={Shops}
+          options={{ title: "Shops" }}
+        />
+
+        <Stack.Screen
+          name="Hotel"
+          component={Hotel}
+          options={{ title: "Hotel" }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const HomeScreen = ({ navigation }) => {
+  const [counter, setCount] = useState(0);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.cardCont}>
@@ -23,28 +66,83 @@ export default function App() {
         />
       </View>
       <View style={styles.mainMenu}>
-        <Button
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <Button
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <Button
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <Button
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        <Button title="Food" onPress={() => navigation.navigate("Food")} />
+        <Button title="Shops" onPress={() => navigation.navigate("Shops")} />
+        <Button title="Museum" onPress={() => navigation.navigate("Museum")} />
+        <Button title="Hotel" onPress={() => navigation.navigate("Hotel")} />
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
-}
+};
+
+const Museum = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+const Food = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+const Shops = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+const Hotel = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default MyStack;

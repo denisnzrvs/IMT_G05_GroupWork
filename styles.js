@@ -25,7 +25,13 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignSelf: "flex-start",
     backgroundColor: "grey",
-    margin: 20,
+    marginTop: 20,
+    marginBottom: 20,
+    resizeMode: "stretch",
+    borderWidth: 5,
+    borderColor: "red",
+    height: 489,
+    width: 573,
   },
 
   minskPhoto: {
@@ -39,7 +45,7 @@ const styles = StyleSheet.create({
   },
   mainMenu: {
     flex: 2,
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
     height: "100%",
     width: "100%",
@@ -48,7 +54,6 @@ const styles = StyleSheet.create({
     backgroundColor: "ghostwhite",
     marginTop: 20,
     flexWrap: "wrap",
-    alignContent: "flex-start",
     justifyContent: "space-around",
   },
   boxText: { color: "darkslategray", fontWeight: "bold" },
