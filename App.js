@@ -16,6 +16,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Styles from "./styles";
 const Stack = createNativeStackNavigator();
 
+
 const MyStack = () => {
   return (
     <NavigationContainer>
@@ -122,10 +123,28 @@ const HomeScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.menu}>
-        <Button title="Food" onPress={() => navigation.navigate("Food")} />
-        <Button title="Shops" onPress={() => navigation.navigate("Shops")} />
-        <Button title="Museum" onPress={() => navigation.navigate("Museum")} />
-        <Button title="Hotel" onPress={() => navigation.navigate("Hotel")} />
+      <View style={styles.row}>
+      <View style = {styles.buttonContainer}>
+<TouchableOpacity style = {styles.button} onPress={() => navigation.navigate("Food")}>
+<Text style={styles.buttonText}>Food</Text>
+</TouchableOpacity>
+      </View>
+      <View style = {styles.buttonContainer}>
+      <TouchableOpacity style = {styles.button} onPress={() => navigation.navigate("Shops")}>
+      <Text style={styles.buttonText}>Shops</Text>
+      </TouchableOpacity>
+      </View>
+      <View style = {styles.buttonContainer}>
+      <TouchableOpacity style = {styles.button}onPress={() => navigation.navigate("Museum")}>
+      <Text style={styles.buttonText}>Museum</Text>
+      </TouchableOpacity>
+      </View>
+      <View style = {styles.buttonContainer}>
+      <TouchableOpacity style = {styles.button} onPress={() => navigation.navigate("Hotel")}>
+      <Text style={styles.buttonText}>Hotel</Text>
+      </TouchableOpacity>
+      </View>
+      </View>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -197,8 +216,8 @@ const theNationalArtMuseum = () => {
          initialRegion={{
            latitude: 53.89847340873672,
            longitude: 27.56077135776869,
-           latitudeDelta: 53.89847340873672,
-           longitudeDelta: 27.56077135776869,
+           latitudeDelta: 0.0002,
+           longitudeDelta: 0.0002,
          }}
        >
          <MapView.Marker
@@ -233,8 +252,8 @@ const yGallery = () => {
          initialRegion={{
            latitude: 53.891480491039665,
            longitude: 27.57189156355414,
-           latitudeDelta: 53.891480491039665,
-           longitudeDelta: 27.57189156355414,
+           latitudeDelta: 0.0002,
+           longitudeDelta: 0.0002,
          }}
        >
          <MapView.Marker
@@ -269,8 +288,8 @@ const culturalCenterKorpus = () => {
           initialRegion={{
             latitude: 53.915252341346914,
             longitude: 27.572769759398525,
-            latitudeDelta: 53.915252341346914,
-            longitudeDelta: 27.572769759398525,
+            latitudeDelta: 0.0002,
+            longitudeDelta: 0.0002,
           }}
         >
           <MapView.Marker
@@ -305,8 +324,8 @@ const artBelarusGallery = () => {
             initialRegion={{
               latitude: 53.91015326504539,
               longitude: 27.579637242174673,
-              latitudeDelta: 53.91015326504539,
-              longitudeDelta: 27.579637242174673,
+              latitudeDelta: 0.0002,
+              longitudeDelta: 0.0002,
             }}
           >
             <MapView.Marker
@@ -341,8 +360,8 @@ const theAzgurMuseumAndStudio = () => {
            initialRegion={{
              latitude: 53.899339879560074,
              longitude: 27.5785161857004,
-             latitudeDelta: 53.899339879560074,
-             longitudeDelta: 27.5785161857004,
+             latitudeDelta: 0.0002,
+             longitudeDelta: 0.0002,
            }}
          >
            <MapView.Marker
@@ -373,25 +392,25 @@ const Miraž = () => {
         >
           <Text style={styles.title}> Miraž </Text>
           <Text style={styles.address}> Street Kulman, 5b </Text>
-          <Text style={styles.address}>
+          <Text style={styles.recommendation}>
             You must try: kebab
           </Text>
         </View>
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89016197588591,
-            longitude: 27.574419747181885,
-            latitudeDelta: 53.89016197588591,
-            longitudeDelta: 27.574419747181885,
+            latitude: 53.921243776288826,
+            longitude: 27.57993359997196,
+            latitudeDelta: 0.0002,
+            longitudeDelta: 0.0002,
           }}
         >
-          <MapView.Marker
-            coordinate={{
-              latitude: 53.89016197588591,
-              longitude: 27.574419747181885,
-            }}
-          />
+        <MapView.Marker
+          coordinate={{
+            latitude: 53.921243776288826,
+            longitude: 27.57993359997196,
+          }}
+        />
         </MapView>
       </View>
       <StatusBar style="auto" />
@@ -412,7 +431,7 @@ const Pesochnica = () => {
         <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
           <Text style={styles.title}> Pesochnica </Text>
           <Text style={styles.address}> Street Kujbyšava, 45 </Text>
-          <Text style={styles.address}> You must try: all from waffles to burgers </Text>
+          <Text style={styles.recommendation}> You must try: all from waffles to burgers </Text>
         </View>
         <MapView
           style={styles.mapView}
@@ -420,8 +439,8 @@ const Pesochnica = () => {
 
             latitude: 53.91491766969068,
             longitude: 27.57013491943066,
-            latitudeDelta: 53.91491766969068,
-            longitudeDelta: 27.57013491943066,
+            latitudeDelta: 0.0002,
+            longitudeDelta: 0.0002,
           }}
         >
           <MapView.Marker
@@ -450,7 +469,7 @@ const DEPO = () => {
         <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
           <Text style={styles.title}> DEPO </Text>
           <Text style={styles.address}> Street Kastryčnickaja, 23 </Text>
-          <Text style={styles.address}> You must try: crepes </Text>
+          <Text style={styles.recommendation}> You must try: crepes </Text>
         </View>
         <MapView
           style={styles.mapView}
@@ -458,8 +477,8 @@ const DEPO = () => {
 
             latitude: 57.54099013542766,
             longitude: 25.39951055230902,
-            latitudeDelta: 57.54099013542766,
-            longitudeDelta: 25.39951055230902,
+            latitudeDelta: 0.0002,
+            longitudeDelta: 0.0002,
           }}
         >
           <MapView.Marker
@@ -488,7 +507,7 @@ const Lido = () => {
         <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
           <Text style={styles.title}> Lido </Text>
           <Text style={styles.address}> Street Niezaležnasci, 49/1 </Text>
-          <Text style={styles.address}> You must try: home-made dishes </Text>
+          <Text style={styles.recommendation}> You must try: home-made dishes </Text>
         </View>
         <MapView
           style={styles.mapView}
@@ -496,8 +515,8 @@ const Lido = () => {
 
             latitude: 53.917046159803874,
             longitude: 27.58536194579001,
-            latitudeDelta: 53.917046159803874,
-            longitudeDelta: 27.58536194579001,
+            latitudeDelta: 0.0002,
+            longitudeDelta: 0.0002,
           }}
         >
           <MapView.Marker
@@ -526,15 +545,15 @@ const Enzo = () => {
         <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
           <Text style={styles.title}> Enzo </Text>
           <Text style={styles.address}> Street Kastryčnickaja, 23 </Text>
-          <Text style={styles.address}> You must try: Enzo Burger, Texas Burger, steaks </Text>
+          <Text style={styles.recommendation}> You must try: Enzo Burger, Texas Burger, steaks </Text>
         </View>
         <MapView
           style={styles.mapView}
           initialRegion={{
             latitude: 53.89016122410179,
             longitude: 27.574418332783168,
-            latitudeDelta: 53.89016122410179,
-            longitudeDelta: 27.574418332783168,
+            latitudeDelta: 0.0002,
+            longitudeDelta: 0.0002,
           }}
         >
           <MapView.Marker
