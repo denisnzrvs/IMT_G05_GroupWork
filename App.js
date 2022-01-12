@@ -108,6 +108,13 @@ const MyStack = () => {
         component={Enzo}
         options={{ title: "Enzo" }}
         />
+
+        <Stack.Screen
+        name="pinkyBandinsky"
+        component={pinkyBandinsky}
+        options={{ title: "Pinky Bandinsky" }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -186,6 +193,7 @@ const Food = ({ navigation }) => {
     <Button title="DEPO" onPress={() => navigation.navigate("DEPO")} />
     <Button title="Lido" onPress={() => navigation.navigate("Lido")} />
     <Button title="Enzo" onPress={() => navigation.navigate("Enzo")} />
+    <Button title="Pinky Bandinsky" onPress={() => navigation.navigate("pinkyBandinsky")} />
   </View>
   <StatusBar style="auto" />
   </SafeAreaView>;
@@ -216,16 +224,9 @@ const theNationalArtMuseum = () => {
          initialRegion={{
            latitude: 53.89847340873672,
            longitude: 27.56077135776869,
-           latitudeDelta: 0.0002,
-           longitudeDelta: 0.0002,
-         }}
-       >
-         <MapView.Marker
-           coordinate={{
-             latitude: 53.89847340873672,
-             longitude: 27.56077135776869,
-           }}
-         />
+           latitudeDelta: 0.001,
+           longitudeDelta: 0.001,
+         }}>
        </MapView>
       </View>
       <StatusBar style="auto" />
@@ -252,16 +253,9 @@ const yGallery = () => {
          initialRegion={{
            latitude: 53.891480491039665,
            longitude: 27.57189156355414,
-           latitudeDelta: 0.0002,
-           longitudeDelta: 0.0002,
-         }}
-       >
-         <MapView.Marker
-           coordinate={{
-             latitude: 53.891480491039665,
-             longitude: 27.57189156355414,
-           }}
-         />
+           latitudeDelta: 0.001,
+           longitudeDelta: 0.001,
+         }} >
        </MapView>
       </View>
       <StatusBar style="auto" />
@@ -288,16 +282,9 @@ const culturalCenterKorpus = () => {
           initialRegion={{
             latitude: 53.915252341346914,
             longitude: 27.572769759398525,
-            latitudeDelta: 0.0002,
-            longitudeDelta: 0.0002,
-          }}
-        >
-          <MapView.Marker
-            coordinate={{
-              latitude: 53.915252341346914,
-              longitude: 27.572769759398525,
-            }}
-          />
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
         </MapView>
       </View>
       <StatusBar style="auto" />
@@ -324,16 +311,9 @@ const artBelarusGallery = () => {
             initialRegion={{
               latitude: 53.91015326504539,
               longitude: 27.579637242174673,
-              latitudeDelta: 0.0002,
-              longitudeDelta: 0.0002,
-            }}
-          >
-            <MapView.Marker
-              coordinate={{
-                latitude: 53.91015326504539,
-                longitude: 27.579637242174673,
-              }}
-            />
+              latitudeDelta: 0.001,
+              longitudeDelta: 0.001,
+            }}>
           </MapView>
       </View>
       <StatusBar style="auto" />
@@ -360,16 +340,9 @@ const theAzgurMuseumAndStudio = () => {
            initialRegion={{
              latitude: 53.899339879560074,
              longitude: 27.5785161857004,
-             latitudeDelta: 0.0002,
-             longitudeDelta: 0.0002,
-           }}
-         >
-           <MapView.Marker
-             coordinate={{
-               latitude: 53.899339879560074,
-               longitude: 27.5785161857004,
-             }}
-           />
+             latitudeDelta: 0.001,
+             longitudeDelta: 0.001,
+           }}>
          </MapView>
       </View>
       <StatusBar style="auto" />
@@ -401,16 +374,9 @@ const Miraž = () => {
           initialRegion={{
             latitude: 53.921243776288826,
             longitude: 27.57993359997196,
-            latitudeDelta: 0.0002,
-            longitudeDelta: 0.0002,
-          }}
-        >
-        <MapView.Marker
-          coordinate={{
-            latitude: 53.921243776288826,
-            longitude: 27.57993359997196,
-          }}
-        />
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
         </MapView>
       </View>
       <StatusBar style="auto" />
@@ -439,16 +405,9 @@ const Pesochnica = () => {
 
             latitude: 53.91491766969068,
             longitude: 27.57013491943066,
-            latitudeDelta: 0.0002,
-            longitudeDelta: 0.0002,
-          }}
-        >
-          <MapView.Marker
-            coordinate={{
-              latitude: 53.91491766969068,
-              longitude: 27.57013491943066,
-            }}
-          />
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
         </MapView>
       </View>
       <StatusBar style="auto" />
@@ -477,16 +436,9 @@ const DEPO = () => {
 
             latitude: 57.54099013542766,
             longitude: 25.39951055230902,
-            latitudeDelta: 0.0002,
-            longitudeDelta: 0.0002,
-          }}
-        >
-          <MapView.Marker
-            coordinate={{
-              latitude: 57.54099013542766,
-              longitude: 25.39951055230902,
-            }}
-          />
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
         </MapView>
       </View>
       <StatusBar style="auto" />
@@ -515,16 +467,9 @@ const Lido = () => {
 
             latitude: 53.917046159803874,
             longitude: 27.58536194579001,
-            latitudeDelta: 0.0002,
-            longitudeDelta: 0.0002,
-          }}
-        >
-          <MapView.Marker
-            coordinate={{
-              latitude: 53.917046159803874,
-              longitude: 27.58536194579001,
-            }}
-          />
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
         </MapView>
       </View>
       <StatusBar style="auto" />
@@ -552,16 +497,39 @@ const Enzo = () => {
           initialRegion={{
             latitude: 53.89016122410179,
             longitude: 27.574418332783168,
-            latitudeDelta: 0.0002,
-            longitudeDelta: 0.0002,
-          }}
-        >
-          <MapView.Marker
-            coordinate={{
-              latitude: 53.89016122410179,
-              longitude: 27.574418332783168,
-            }}
-          />
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const pinkyBandinsky = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/food/pinkyBandinsky.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Pinky Bandinsky </Text>
+          <Text style={styles.address}> Street Kamsamolskaja, 13a </Text>
+          <Text style={styles.recommendation}> You must try: dinner </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.89016122410179,
+            longitude: 27.574418332783168,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
         </MapView>
       </View>
       <StatusBar style="auto" />
