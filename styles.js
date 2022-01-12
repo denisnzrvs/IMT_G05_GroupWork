@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     height: "100%",
     width: "100%",
-    borderBottomLeftRadius: "4%",
-    borderBottomRightRadius: "4%",
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4,
     marginBottom: 20,
   },
   menu: {
