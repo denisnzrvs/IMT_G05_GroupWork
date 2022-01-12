@@ -83,10 +83,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "left",
   },
-  buttonContainer: {alignSelf: 'stretch', justifyContent: 'center', height: '50%', width: '50%', backgroundColor: 'white', borderWidth: 10, borderColor: 'gainsboro', borderRadius: 15},
+  buttonContainer: {alignSelf: 'stretch', justifyContent: 'center', height: '50%', width: '50%', backgroundColor: 'gainsboro', borderWidth: 10, borderColor: 'gainsboro', borderRadius: 15},
 button:{height: '100%', width: "100%",    flex: 1,
      justifyContent: 'center',
-     alignItems: 'center', backgroundColor: 'white'},
+     alignItems: 'center', backgroundColor: 'white', borderRadius: 17},
   row: {flexDirection: 'row', flex: 2, alignSelf:'stretch', alignItems:'center', justifyContent: 'space-between', flexWrap: 'wrap'},
   address: { marginLeft: 24, fontSize: 16, justifyContent: "center" },
   mapView: {
