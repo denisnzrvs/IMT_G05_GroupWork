@@ -115,6 +115,49 @@ const MyStack = () => {
         options={{ title: "Pinky Bandinsky" }}
         />
 
+        <Stack.Screen
+        name="Vasilki"
+        component={Vasilki}
+        options={{ title: "Vasilki" }}
+        />
+
+        <Stack.Screen
+        name="penaDnej"
+        component={penaDnej}
+        options={{ title: "Pena Dnej" }}
+        />
+
+        <Stack.Screen
+        name="GUM"
+        component={GUM}
+        options={{ title: "GUM" }}
+        />
+
+        <Stack.Screen
+        name="TSUM"
+        component={TSUM}
+        options={{ title: "TSUM Minsk" }}
+        />
+
+        <Stack.Screen
+        name="KamaroŭskyMarket"
+        component={KamaroŭskyMarket}
+        options={{ title: "Kamaroŭsky Market" }}
+        />
+
+        <Stack.Screen
+        name="DanaMall"
+        component={DanaMall}
+        options={{ title: "Dana Mall" }}
+        />
+
+        <Stack.Screen
+        name="VialikіDziakuj"
+        component={VialikіDziakuj}
+        options={{ title: "Vialikі Dziakuj" }}
+        />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -194,12 +237,30 @@ const Food = ({ navigation }) => {
     <Button title="Lido" onPress={() => navigation.navigate("Lido")} />
     <Button title="Enzo" onPress={() => navigation.navigate("Enzo")} />
     <Button title="Pinky Bandinsky" onPress={() => navigation.navigate("pinkyBandinsky")} />
+    <Button title="Vasilki" onPress={() => navigation.navigate("Vasilki")} />
+    <Button title="Pena Dnej" onPress={() => navigation.navigate("penaDnej")} />
   </View>
   <StatusBar style="auto" />
   </SafeAreaView>;
 };
-const Shops = () => {
-  return <SafeAreaView style={styles.container}></SafeAreaView>;
+
+const Shops = ({ navigation }) => {
+  return <SafeAreaView style={styles.container}>
+  <View style={styles.coverPhotoContainer}>
+    <Image
+      style={styles.coverPhoto}
+      source={require("./assets/icons/shops_minsk.png")}
+    />
+  </View>
+  <View style={styles.menu}>
+    <Button title="GUM" onPress={() => navigation.navigate("GUM")} />
+    <Button title="TSUM Minsk" onPress={() => navigation.navigate("TSUM")} />
+    <Button title="Kamaroŭsky Market" onPress={() => navigation.navigate("KamaroŭskyMarket")} />
+    <Button title="Dana Mall" onPress={() => navigation.navigate("DanaMall")} />
+    <Button title="Vialikі Dziakuj" onPress={() => navigation.navigate("VialikіDziakuj")} />
+  </View>
+  <StatusBar style="auto" />
+  </SafeAreaView>;
 };
 const Hotel = () => {
   return <SafeAreaView style={styles.container}></SafeAreaView>;
@@ -525,8 +586,218 @@ const pinkyBandinsky = () => {
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89016122410179,
-            longitude: 27.574418332783168,
+            latitude: 53.90286820117456,
+            longitude: 27.552860869317133,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const Vasilki = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/food/Vasilki.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Vasilki </Text>
+          <Text style={styles.address}> Street praspiekt Niezaležnasci, 16 </Text>
+          <Text style={styles.recommendation}> You must try: draniki, kolduny, pancakes, shank, “Olivier” salad </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.89858879619436,
+            longitude: 27.55552445549251,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const penaDnej = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/food/penaDnej.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Pena Dnej </Text>
+          <Text style={styles.address}> Street Internacyjanalnaja, 23 </Text>
+          <Text style={styles.recommendation}> You must try: wine, tartare </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.90389092979887,
+            longitude: 27.558796415010942,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const GUM = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/shops/GUM.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> GUM </Text>
+          <Text style={styles.address}> Street praspiekt Niezaležnasci, 21 </Text>
+          <Text style={styles.recommendation}> You can buy: everything </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.900618171718435,
+            longitude: 27.558063923074645,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const TSUM = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/shops/TSUM.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> TSUM </Text>
+          <Text style={styles.address}> Street praspiekt Niezaležnasci, 54 </Text>
+          <Text style={styles.recommendation}> You can buy: everything </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.91673277554038,
+            longitude: 27.586101691718632,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const KamaroŭskyMarket = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/shops/kamaroŭskyMarket.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Kamaroŭsky Market </Text>
+          <Text style={styles.address}> Street Viery Charužaj, 8 </Text>
+          <Text style={styles.recommendation}> You can buy: fresh food </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.91992097425407,
+            longitude: 27.577704943846914,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const DanaMall = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/shops/danaMall.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Dana Mall </Text>
+          <Text style={styles.address}> Street Piatra Mscisłaŭca, 11 </Text>
+          <Text style={styles.recommendation}> You can buy: mass-market </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.93294048362484,
+            longitude: 27.649661609142747,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const VialikіDziakuj = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/shops/vialikіDziakuj.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Vialikі dziakuj </Text>
+          <Text style={styles.address}> Street Kastryčnickaja, 23a </Text>
+          <Text style={styles.recommendation}> You can buy: gifts and souvenirs </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.890263,
+            longitude: 27.575320,
             latitudeDelta: 0.001,
             longitudeDelta: 0.001,
           }}>
