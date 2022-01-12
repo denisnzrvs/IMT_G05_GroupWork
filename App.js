@@ -193,12 +193,21 @@ const theNationalArtMuseum = () => {
           <Text style={styles.address}> Street Lenina, 20 </Text>
         </View>
         <MapView
-          style={styles.mapView}
-          initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+         style={styles.mapView}
+         initialRegion={{
+           latitude: 53.89847340873672,
+           longitude: 27.56077135776869,
+           latitudeDelta: 53.89847340873672,
+           longitudeDelta: 27.56077135776869,
+         }}
+       >
+         <MapView.Marker
+           coordinate={{
+             latitude: 53.89847340873672,
+             longitude: 27.56077135776869,
+           }}
+         />
+       </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -220,12 +229,21 @@ const yGallery = () => {
           <Text style={styles.address}> Street Kastrycnickaja, 19 </Text>
         </View>
         <MapView
-          style={styles.mapView}
-          initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+         style={styles.mapView}
+         initialRegion={{
+           latitude: 53.891480491039665,
+           longitude: 27.57189156355414,
+           latitudeDelta: 53.891480491039665,
+           longitudeDelta: 27.57189156355414,
+         }}
+       >
+         <MapView.Marker
+           coordinate={{
+             latitude: 53.891480491039665,
+             longitude: 27.57189156355414,
+           }}
+         />
+       </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -249,10 +267,19 @@ const culturalCenterKorpus = () => {
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+            latitude: 53.915252341346914,
+            longitude: 27.572769759398525,
+            latitudeDelta: 53.915252341346914,
+            longitudeDelta: 27.572769759398525,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 53.915252341346914,
+              longitude: 27.572769759398525,
+            }}
+          />
+        </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -274,12 +301,21 @@ const artBelarusGallery = () => {
           <Text style={styles.address}> Street Kazlova, 3 </Text>
         </View>
         <MapView
-          style={styles.mapView}
-          initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+            style={styles.mapView}
+            initialRegion={{
+              latitude: 53.91015326504539,
+              longitude: 27.579637242174673,
+              latitudeDelta: 53.91015326504539,
+              longitudeDelta: 27.579637242174673,
+            }}
+          >
+            <MapView.Marker
+              coordinate={{
+                latitude: 53.91015326504539,
+                longitude: 27.579637242174673,
+              }}
+            />
+          </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -301,12 +337,21 @@ const theAzgurMuseumAndStudio = () => {
           <Text style={styles.address}> Street Zaira Azhura, 8 </Text>
         </View>
         <MapView
-          style={styles.mapView}
-          initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+           style={styles.mapView}
+           initialRegion={{
+             latitude: 53.899339879560074,
+             longitude: 27.5785161857004,
+             latitudeDelta: 53.899339879560074,
+             longitudeDelta: 27.5785161857004,
+           }}
+         >
+           <MapView.Marker
+             coordinate={{
+               latitude: 53.899339879560074,
+               longitude: 27.5785161857004,
+             }}
+           />
+         </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -323,18 +368,31 @@ const Miraž = () => {
         />
       </View>
       <View style={styles.description}>
-        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+        <View
+          style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}
+        >
           <Text style={styles.title}> Miraž </Text>
           <Text style={styles.address}> Street Kulman, 5b </Text>
-          <Text style={styles.address}> You must try: kebab </Text>
+          <Text style={styles.address}>
+            You must try: kebab
+          </Text>
         </View>
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+            latitude: 53.89016197588591,
+            longitude: 27.574419747181885,
+            latitudeDelta: 53.89016197588591,
+            longitudeDelta: 27.574419747181885,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 53.89016197588591,
+              longitude: 27.574419747181885,
+            }}
+          />
+        </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -359,10 +417,20 @@ const Pesochnica = () => {
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+
+            latitude: 53.91491766969068,
+            longitude: 27.57013491943066,
+            latitudeDelta: 53.91491766969068,
+            longitudeDelta: 27.57013491943066,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 53.91491766969068,
+              longitude: 27.57013491943066,
+            }}
+          />
+        </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -387,10 +455,20 @@ const DEPO = () => {
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+
+            latitude: 57.54099013542766,
+            longitude: 25.39951055230902,
+            latitudeDelta: 57.54099013542766,
+            longitudeDelta: 25.39951055230902,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 57.54099013542766,
+              longitude: 25.39951055230902,
+            }}
+          />
+        </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -415,10 +493,20 @@ const Lido = () => {
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+
+            latitude: 53.917046159803874,
+            longitude: 27.58536194579001,
+            latitudeDelta: 53.917046159803874,
+            longitudeDelta: 27.58536194579001,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 53.917046159803874,
+              longitude: 27.58536194579001,
+            }}
+          />
+        </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -443,10 +531,19 @@ const Enzo = () => {
         <MapView
           style={styles.mapView}
           initialRegion={{
-            latitude: 53.89855370029596,
-            longitude: 27.560827506866936,
-          }}>
-      </MapView>
+            latitude: 53.89016122410179,
+            longitude: 27.574418332783168,
+            latitudeDelta: 53.89016122410179,
+            longitudeDelta: 27.574418332783168,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 53.89016122410179,
+              longitude: 27.574418332783168,
+            }}
+          />
+        </MapView>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
