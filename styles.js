@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  paragraph: { margin: 24, fontSize: 18, textAlign: "center" },
   recommendation: {marginLeft: 24,
   marginTop: 24,
   marginBottom: 12,
