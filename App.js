@@ -157,6 +157,35 @@ const MyStack = () => {
         options={{ title: "Vialikі Dziakuj" }}
         />
 
+        <Stack.Screen
+        name="TrinityAndRiverside"
+        component={TrinityAndRiverside}
+        options={{ title: "Trinity&Riverside" }}
+        />
+
+        <Stack.Screen
+        name="Flatcom"
+        component={Flatcom}
+        options={{ title: "Flatcom" }}
+        />
+
+        <Stack.Screen
+        name="HotelMonastyrski"
+        component={HotelMonastyrski}
+        options={{ title: "Hotel Monastyrski" }}
+        />
+
+        <Stack.Screen
+        name="RenaissanceMinskHotel"
+        component={RenaissanceMinskHotel}
+        options={{ title: "Renaissance Minsk Hotel" }}
+        />
+
+        <Stack.Screen
+        name="Mariott"
+        component={Mariott}
+        options={{ title: "Mariott" }}
+        />
 
       </Stack.Navigator>
     </NavigationContainer>
@@ -262,8 +291,24 @@ const Shops = ({ navigation }) => {
   <StatusBar style="auto" />
   </SafeAreaView>;
 };
-const Hotel = () => {
-  return <SafeAreaView style={styles.container}></SafeAreaView>;
+
+const Hotel = ({ navigation }) => {
+  return <SafeAreaView style={styles.container}>
+  <View style={styles.coverPhotoContainer}>
+    <Image
+      style={styles.coverPhoto}
+      source={require("./assets/icons/shops_minsk.png")}
+    />
+  </View>
+  <View style={styles.menu}>
+    <Button title="Trinity&Riverside" onPress={() => navigation.navigate("TrinityAndRiverside")} />
+    <Button title="Flatcom" onPress={() => navigation.navigate("Flatcom")} />
+    <Button title="Hotel Monastyrski" onPress={() => navigation.navigate("HotelMonastyrski")} />
+    <Button title="Renaissance Minsk Hotel" onPress={() => navigation.navigate("RenaissanceMinskHotel")} />
+    <Button title="Mariott" onPress={() => navigation.navigate("Mariott")} />
+  </View>
+  <StatusBar style="auto" />
+  </SafeAreaView>;
 };
 
 const theNationalArtMuseum = () => {
@@ -798,6 +843,156 @@ const VialikіDziakuj = () => {
           initialRegion={{
             latitude: 53.890263,
             longitude: 27.575320,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const TrinityAndRiverside = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/hotels/Trinity&Riverside.jpeg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Trinity&Riverside </Text>
+          <Text style={styles.address}> Street Staravilenskaja, 12 </Text>
+          <Text style={styles.recommendation}> Prices start from 8€ </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.908804,
+            longitude: 27.556231,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const Flatcom = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/hotels/Flatcom.jpeg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Flatcom </Text>
+          <Text style={styles.address}> Street Prytyckaha, 2 </Text>
+          <Text style={styles.recommendation}> Prices start from 7€ </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.91128769073855,
+            longitude: 27.506306008907355,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const HotelMonastyrski = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/hotels/HotelMonastyrski.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Hotel Monastyrski </Text>
+          <Text style={styles.address}> Street Kiryly i Miafodzija, 6 </Text>
+          <Text style={styles.recommendation}> Prices start from 45€ </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.90521671471928,
+            longitude: 27.557907877070754,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const RenaissanceMinskHotel = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/hotels/RenaissanceMinskHotel.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Renaissance Minsk Hotel </Text>
+          <Text style={styles.address}> Street praspiekt Dziarzynskaha, 1 </Text>
+          <Text style={styles.recommendation}> Prices start from 80€ </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.892285631453696,
+            longitude: 27.52910171316293,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001,
+          }}>
+        </MapView>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
+};
+
+const Mariott = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.coverPhotoContainer}>
+        <Image
+          style={styles.coverPhoto}
+          source={require("./assets/hotels/Mariott.jpg")}
+        />
+      </View>
+      <View style={styles.description}>
+        <View style={{ flex: 1, alignSelf: "flex-start", flexDirection: "column" }}>
+          <Text style={styles.title}> Mariott </Text>
+          <Text style={styles.address}> Street praspiekt Pieramozcau, 20 </Text>
+          <Text style={styles.recommendation}> Prices start from 122€ </Text>
+        </View>
+        <MapView
+          style={styles.mapView}
+          initialRegion={{
+            latitude: 53.93303305737984,
+            longitude: 27.511693087462994,
             latitudeDelta: 0.001,
             longitudeDelta: 0.001,
           }}>
